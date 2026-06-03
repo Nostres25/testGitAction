@@ -1,4 +1,4 @@
-package test.java.com.example.demo.data;
+package com.example.demo.data;
 
 import main.java.com.example.demo.data.Voiture;
 import org.junit.jupiter.api.Test;

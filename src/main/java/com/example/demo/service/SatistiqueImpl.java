@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
-import main.java.com.example.demo.data.Voiture;
-import main.java.com.example.demo.service.Echantillon;
-import main.java.com.example.demo.service.Statistique;
+import com.example.demo.data.Voiture;
+import com.example.demo.service.Echantillon;
+import com.example.demo.service.Statistique;
 
 import java.util.ArrayList;
 import java.util.Iterator;

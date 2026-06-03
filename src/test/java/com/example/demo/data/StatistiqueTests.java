@@ -1,10 +1,10 @@
 package test.java.com.example.demo.service;
 
-import main.java.com.example.demo.data.Voiture;
-import main.java.com.example.demo.service.Echantillon;
+import com.example.demo.data.Voiture;
+import com.example.demo.service.Echantillon;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import main.java.com.example.demo.service.StatistiqueImpl;
+import com.example.demo.service.StatistiqueImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
