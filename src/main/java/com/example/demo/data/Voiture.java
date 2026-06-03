@@ -15,6 +15,7 @@ public class Voiture {
         return id;
     }
 
+    // Définir l'identifiant de la voiture
     public void setId(int id) {
         this.id = id;
     }
