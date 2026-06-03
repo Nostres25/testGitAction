@@ -1,6 +1,6 @@
 package com.example.demo.data;
 
-import main.java.com.example.demo.data.Voiture;
+import com.example.demo.data.Voiture;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

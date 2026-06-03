@@ -1,4 +1,4 @@
-package test.java.com.example.demo.service;
+package com.example.demo.service;
 
 import com.example.demo.data.Voiture;
 import com.example.demo.service.Echantillon;
