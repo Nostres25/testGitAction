@@ -7,8 +7,6 @@ import com.example.demo.service.Statistique;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class StatistiqueImpl implements Statistique {
@@ -20,7 +18,6 @@ public class StatistiqueImpl implements Statistique {
         voitures.add(voiture);
     }
 
-    @Override
     public Echantillon prixMoyen() throws ArithmeticException {
         int prixTotal = 0;
         int nombreDeVoitures = 0;
