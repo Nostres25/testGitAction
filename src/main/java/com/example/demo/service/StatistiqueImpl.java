@@ -28,4 +28,6 @@ public class StatistiqueImpl implements Statistique {
         }
         return new Echantillon(nombreDeVoitures, prixTotal/nombreDeVoitures);
     }
+
+    public int prix() throws ArithmeticException {}
 }
