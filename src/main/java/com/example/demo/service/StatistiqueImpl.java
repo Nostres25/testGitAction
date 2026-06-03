@@ -29,5 +29,17 @@ public class StatistiqueImpl implements Statistique {
         return new Echantillon(nombreDeVoitures, prixTotal/nombreDeVoitures);
     }
 
-    public int prix() throws ArithmeticException {}
+    public int prix() throws ArithmeticException {
+        // Consignes dans Statistique.java pas assez claires
+
+        int prixTotal = 0;
+        int nombreDeVoitures = 0;
+        Iterator<Voiture> iterator = voitures.iterator();
+        while(iterator.hasNext()){
+            prixTotal = prixTotal + iterator.next().getPrix();
+            nombreDeVoitures++;
+        }
+
+        return prixTotal;
+    }
 }
