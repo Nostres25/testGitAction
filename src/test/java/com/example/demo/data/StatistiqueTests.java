@@ -33,7 +33,10 @@ public class StatistiqueTests {
 
         int nombreVoitures = voitures.length;
 
-        assertEquals(stats.prixMoyen(), new Echantillon(nombreVoitures, prixTotal/nombreVoitures));
+        Echantillon echantillon = stats.prixMoyen();
+
+        assertEquals(echantillon.getNombreDeVoitures(), nombreVoitures);
+        assertEquals(echantillon.getPrixMoyen(), prixTotal/nombreVoitures);
 
     }
 }
