@@ -37,7 +37,7 @@ class WebTests {
         // Expect exception pas de voiture
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .contentType(MediaType.APPLICATION_JSON))
+            .contentType(MediaType.APPLICATION_JSON)
             .andExpect(status().isBadRequest())
             .andExpect(result -> assertTrue(result.getResolvedException() instanceof PasDeVoitureException));
 
@@ -59,7 +59,7 @@ class WebTests {
         // Expect la bonne réponse
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .contentType(MediaType.APPLICATION_JSON))
+            .contentType(MediaType.APPLICATION_JSON)
             .andExpect(status().isOk())
             .andExepect(jsonPath("nombreDeVoitures").value(nombreVoitures))
             .andExepect(jsonPath("prixMoyen").value(prixTotal/nombreVoitures));
