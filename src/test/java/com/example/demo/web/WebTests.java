@@ -42,7 +42,7 @@ class WebTests {
         // Expect exception pas de voiture
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .andExpect(status().isBadRequest())
+            .andExpect(status().isBadRequest());
 
         // Ajouter voitures
         Voiture[] voitures = {
