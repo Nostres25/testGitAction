@@ -6,6 +6,7 @@ import com.example.demo.service.StatistiqueImpl;
 import com.example.demo.web.PasDeVoitureException;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -40,7 +41,7 @@ class WebTests {
         mockMvc.perform(get("/statistique"))
             .andDo(print())
             .andExpect(status().isBadRequest())
-            .andExpect(result -> return result.getResolvedException() instanceof PasDeVoitureException);
+            .andExpect(result -> assertTrue(result.getResolvedException() instanceof PasDeVoitureException));
 
         // Ajouter voitures
         Voiture[] voitures = {
