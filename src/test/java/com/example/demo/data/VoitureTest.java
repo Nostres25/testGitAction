@@ -13,8 +13,6 @@ public class VoitureTest {
 
     @BeforeEach
     void init() {
-        String marque = marque;
-        int prix = prix;
         voiture = new Voiture(marque, prix);
     }
 
