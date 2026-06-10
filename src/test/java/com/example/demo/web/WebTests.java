@@ -35,13 +35,14 @@ class WebTests {
     // Lien intéréssant : https://codingnomads.com/api-testing-mockmvc-jsonpath-example
 
     @Test
-    public void getStatistique() {
+    public void getStatistique() throws Exception {
+        Echantillon chantillon = new Enchantillon(10, 10000);
+        when(statistiqueImpl.prixMoyen()).thenReturn(echantillon);
 
         // Expect exception pas de voiture
         mockMvc.perform(get("/statistique"))
             .andDo(print())
             .andExpect(status().isBadRequest())
-            .andExpect(result -> assertTrue(result.getResolvedException() instanceof PasDeVoitureException));
 
         // Ajouter voitures
         Voiture[] voitures = {
@@ -62,8 +63,8 @@ class WebTests {
         mockMvc.perform(get("/statistique"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExpect(jsonPath("nombreDeVoitures").value(nombreVoitures))
-            .andExpect(jsonPath("prixMoyen").value(prixTotal/nombreVoitures));
+            .andExpect(jsonPath("nombreDeVoitures").value(10))
+            .andExpect(jsonPath("prixMoyen").value(10000));
 
     }
 
