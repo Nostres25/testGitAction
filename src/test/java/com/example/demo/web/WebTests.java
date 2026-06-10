@@ -3,6 +3,8 @@ package com.example.demo.web;
 import com.example.demo.data.Voiture;
 import com.example.demo.service.Echantillon;
 import com.example.demo.service.StatistiqueImpl;
+import com.example.demo.web.PasDeVoitureException;
+
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +39,8 @@ class WebTests {
         // Expect exception pas de voiture
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .contentType(MediaType.APPLICATION_JSON)
             .andExpect(status().isBadRequest())
-            .andExpect(result -> assertTrue(result.getResolvedException() instanceof PasDeVoitureException));
+            .andExpect(result -> result.getResolvedException() instanceof PasDeVoitureException);
 
         // Ajouter voitures
         Voiture[] voitures = {
@@ -51,7 +52,7 @@ class WebTests {
 
         for (Voiture voiture : voitures) {
             prixTotal += voiture.getPrix();
-            stats.ajouter(voiture);
+            statistiqueImpl.ajouter(voiture);
         }
 
         int nombreVoitures = voitures.length;
@@ -59,7 +60,6 @@ class WebTests {
         // Expect la bonne réponse
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .contentType(MediaType.APPLICATION_JSON)
             .andExpect(status().isOk())
             .andExepect(jsonPath("nombreDeVoitures").value(nombreVoitures))
             .andExepect(jsonPath("prixMoyen").value(prixTotal/nombreVoitures));
