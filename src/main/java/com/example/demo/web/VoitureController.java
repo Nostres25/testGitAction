@@ -19,9 +19,9 @@ public class VoitureController {
     }
 
     @PostMapping("/voiture")
-    public void creerVoiture(@RequestBody Voiture voiture) throws VoitureException {
+    public void creerVoiture(@RequestBody Voiture voiture) throws PasDeVoitureException {
         if(voiture.getId() == 0){
-            throw new VoitureException();
+            throw new PasDeVoitureException();
         }
         System.out.println(voiture);
     }
