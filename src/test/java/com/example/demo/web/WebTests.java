@@ -71,8 +71,7 @@ class WebTests {
 
 
     @Test
-    public void creerVoiture() {
-
+    public void creerVoiture() throws Exception {
         mockMvc.perform(get("/voiture"))
             .andDo(print())
             .andExpect(status().isOk())
