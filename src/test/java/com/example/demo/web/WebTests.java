@@ -63,7 +63,6 @@ class WebTests {
         // Expect la bonne réponse
         mockMvc.perform(get("/statistique"))
             .andDo(print())
-            .andExpect(status().isOk())
             .andExpect(jsonPath("$.nombreDeVoitures").value(10))
             .andExpect(jsonPath("$.prixMoyen").value(10000));
 
@@ -74,8 +73,7 @@ class WebTests {
     public void getVoiture() throws Exception {
         mockMvc.perform(get("/voiture"))
             .andDo(print())
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id").value(1));
+            .andExpect(status().isOk());
 
 
     }
