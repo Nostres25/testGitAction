@@ -4,6 +4,7 @@ import com.example.demo.data.Voiture;
 import com.example.demo.service.Echantillon;
 import com.example.demo.service.StatistiqueImpl;
 import com.example.demo.web.PasDeVoitureException;
+import com.example.demo.service.Echantillon;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -36,7 +37,7 @@ class WebTests {
 
     @Test
     public void getStatistique() throws Exception {
-        Echantillon chantillon = new Enchantillon(10, 10000);
+        Echantillon echantillon = new Enchantillon(10, 10000);
         when(statistiqueImpl.prixMoyen()).thenReturn(echantillon);
 
         // Expect exception pas de voiture

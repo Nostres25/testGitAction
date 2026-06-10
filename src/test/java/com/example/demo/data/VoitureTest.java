@@ -2,18 +2,20 @@ package com.example.demo.data;
 
 import com.example.demo.data.Voiture;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VoitureTest {
     Voiture voiture ;
+    String marque = "BMW";
+    int prix = "BMW";
 
-    @Before
+    @BeforeEach
     void init() {
-        String marque = "BMW";
-        int prix = 100000;
-        voiture = new Voiture("BMW", 100000);
+        String marque = marque;
+        int prix = prix;
+        voiture = new Voiture(marque, prix);
     }
 
     @Test
