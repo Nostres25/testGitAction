@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VoitureTest {
     Voiture voiture ;
     String marque = "BMW";
-    int prix = "BMW";
+    int prix = 10000;
 
     @BeforeEach
     void init() {

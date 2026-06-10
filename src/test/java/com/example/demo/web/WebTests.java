@@ -37,7 +37,7 @@ class WebTests {
 
     @Test
     public void getStatistique() throws Exception {
-        Echantillon echantillon = new Enchantillon(10, 10000);
+        Echantillon echantillon = new Echantillon(10, 10000);
         when(statistiqueImpl.prixMoyen()).thenReturn(echantillon);
 
         // Expect exception pas de voiture
