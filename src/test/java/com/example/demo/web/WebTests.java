@@ -40,7 +40,7 @@ class WebTests {
         mockMvc.perform(get("/statistique"))
             .andDo(print())
             .andExpect(status().isBadRequest())
-            .andExpect(result -> result.getResolvedException() instanceof PasDeVoitureException);
+            .andExpect(result -> return result.getResolvedException() instanceof PasDeVoitureException);
 
         // Ajouter voitures
         Voiture[] voitures = {
@@ -61,8 +61,8 @@ class WebTests {
         mockMvc.perform(get("/statistique"))
             .andDo(print())
             .andExpect(status().isOk())
-            .andExepect(jsonPath("nombreDeVoitures").value(nombreVoitures))
-            .andExepect(jsonPath("prixMoyen").value(prixTotal/nombreVoitures));
+            .andExpect(jsonPath("nombreDeVoitures").value(nombreVoitures))
+            .andExpect(jsonPath("prixMoyen").value(prixTotal/nombreVoitures));
 
     }
 
