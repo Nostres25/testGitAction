@@ -18,8 +18,8 @@ public class VoitureController {
         return v;
     }
 
-    @PostMapping("/voiture")
-    public void creerVoiture(@RequestBody Voiture voiture) throws PasDeVoitureException {
+    @PostMapping("/afficherVoiture")
+    public void afficherVoiture(@RequestBody Voiture voiture) throws PasDeVoitureException {
         if(voiture.getId() == 0){
             throw new PasDeVoitureException();
         }
