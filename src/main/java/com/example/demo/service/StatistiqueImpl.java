@@ -22,10 +22,12 @@ public class StatistiqueImpl implements Statistique {
         int prixTotal = 0;
         int nombreDeVoitures = 0;
         Iterator<Voiture> iterator = voitures.iterator();
+
         while(iterator.hasNext()){
             prixTotal = prixTotal + iterator.next().getPrix();
             nombreDeVoitures++;
         }
+
         return new Echantillon(nombreDeVoitures, prixTotal/nombreDeVoitures);
     }
 

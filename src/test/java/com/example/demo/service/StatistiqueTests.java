@@ -5,7 +5,6 @@ import com.example.demo.service.Echantillon;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.example.demo.service.StatistiqueImpl;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -14,10 +13,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class StatistiqueTests {
 
     @Test
-    void testPrixMoyen() throws Exception {
+    void testPrixMoyenSansVoiture() throws Exception {
         StatistiqueImpl stats = new StatistiqueImpl();
 
         assertThrows(ArithmeticException.class, stats::prixMoyen);
+    }
+
+    @Test
+    void testPrixMoyen() throws Exception {
+        StatistiqueImpl stats = new StatistiqueImpl();
 
         int prixTotal = 0;
 

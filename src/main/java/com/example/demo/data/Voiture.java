@@ -9,7 +9,10 @@ import javax.persistence.Id;
 public class Voiture {
     String marque;
     int prix;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     int i;
 
     public Voiture(){

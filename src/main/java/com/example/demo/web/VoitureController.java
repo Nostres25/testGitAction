@@ -18,10 +18,10 @@ public class VoitureController {
         return v;
     }
 
-    @PostMapping("/voiture")
-    public void creerVoiture(@RequestBody Voiture voiture) throws VoitureException {
+    @PostMapping("/afficherVoiture")
+    public void afficherVoiture(@RequestBody Voiture voiture) throws PasDeVoitureException {
         if(voiture.getId() == 0){
-            throw new VoitureException();
+            throw new PasDeVoitureException();
         }
         System.out.println(voiture);
     }
